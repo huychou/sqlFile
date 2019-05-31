@@ -1,0 +1,89 @@
+CREATE DATABASE [SibeeshPassion]  
+
+ALTER DATABASE [SibeeshPassion] SET COMPATIBILITY_LEVEL = 120  
+GO  
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))  
+begin  
+EXEC [SibeeshPassion].[dbo].[sp_fulltext_database] @action = 'enable'  
+end  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ANSI_NULL_DEFAULT OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ANSI_NULLS OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ANSI_PADDING OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ANSI_WARNINGS OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ARITHABORT OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET AUTO_CLOSE OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET AUTO_SHRINK OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET AUTO_UPDATE_STATISTICS ON  
+GO  
+ALTER DATABASE [SibeeshPassion] SET CURSOR_CLOSE_ON_COMMIT OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET CURSOR_DEFAULT GLOBAL  
+GO  
+ALTER DATABASE [SibeeshPassion] SET CONCAT_NULL_YIELDS_NULL OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET NUMERIC_ROUNDABORT OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET QUOTED_IDENTIFIER OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET RECURSIVE_TRIGGERS OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET DISABLE_BROKER  
+GO  
+ALTER DATABASE [SibeeshPassion] SET AUTO_UPDATE_STATISTICS_ASYNC OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET DATE_CORRELATION_OPTIMIZATION OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET TRUSTWORTHY OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET ALLOW_SNAPSHOT_ISOLATION OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET PARAMETERIZATION SIMPLE  
+GO  
+ALTER DATABASE [SibeeshPassion] SET READ_COMMITTED_SNAPSHOT OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET HONOR_BROKER_PRIORITY OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET RECOVERY SIMPLE  
+GO  
+ALTER DATABASE [SibeeshPassion] SET MULTI_USER  
+GO  
+ALTER DATABASE [SibeeshPassion] SET PAGE_VERIFY CHECKSUM  
+GO  
+ALTER DATABASE [SibeeshPassion] SET DB_CHAINING OFF  
+GO  
+ALTER DATABASE [SibeeshPassion] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF )  
+GO  
+ALTER DATABASE [SibeeshPassion] SET TARGET_RECOVERY_TIME = 0 SECONDS  
+GO  
+ALTER DATABASE [SibeeshPassion] SET DELAYED_DURABILITY = DISABLED  
+GO  
+ALTER DATABASE [SibeeshPassion] SET READ_WRITE  
+GO 
+------------------
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+CREATE TABLE [dbo].[tbl_Subscribers](  
+[SubscriberID] [int] NOT NULL,  
+[MailID] [nvarchar](50) NOT NULL,  
+[SubscribedDate] [datetime2](7) NOT NULL,  
+PRIMARY KEY CLUSTERED  
+(  
+[SubscriberID] ASC  
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
+) ON [PRIMARY]  
+GO   
+
+-------------------------
+INSERT INTO [dbo].[tbl_Subscribers] ([SubscriberID], [MailID], [SubscribedDate]) VALUES (1, N'sibikv4u@gmail.com', N'2015-10-30 00:00:00')  
+INSERT INTO [dbo].[tbl_Subscribers] ([SubscriberID], [MailID], [SubscribedDate]) VALUES (2, N'sibeesh.venu@gmail.com', N'2015-10-29 00:00:00')  
+INSERT INTO [dbo].[tbl_Subscribers] ([SubscriberID], [MailID], [SubscribedDate]) VALUES (3, N'ajaybhasy@gmail.com', N'2015-10-28 00:00:00')   
