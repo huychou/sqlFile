@@ -21,9 +21,7 @@ WHERE id_r  IS NULL;
 GO
 ---3. Thử đề nghị 1 cách nhanh nhất để kiểm tra xem một column của một bảng có duy nhất hay ko
 
-SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
-WHERE TABLE_NAME='duynhat' AND CONSTRAINT_TYPE = 'UNIQUE'
-GO
+
 
 SELECT * 
 FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS tb 
@@ -31,8 +29,8 @@ FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS tb
         on col.CONSTRAINT_NAME = tb.CONSTRAINT_NAME 
 WHERE 
     tb.CONSTRAINT_TYPE = 'UNIQUE'
-    and tb.TABLE_NAME = 'duynhat'
-    and col.COLUMN_NAME = 'tenduynhat'
+    and tb.TABLE_NAME = 'Role'
+    and col.COLUMN_NAME = 'role_name'
 GO
 
 
@@ -59,6 +57,7 @@ SELECT dbo.RandomDate('2014-12-1','2014-12-10') AS NgayBatKy
 GO
 
 ---5. A có một schema hoặc một db, làm cách nào để tìm tất cả các bảng trong schema hoặc csdl đó (ra danh sách). 
+
 SELECT TABLE_NAME 
 FROM  db_Test.INFORMATION_SCHEMA.TABLES 
 WHERE TABLE_TYPE = 'BASE TABLE'
